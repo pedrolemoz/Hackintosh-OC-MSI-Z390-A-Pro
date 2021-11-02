@@ -5,7 +5,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/macOS_Monterey_Z390-A_Pro.png"/>
 
-This EFI is based on the core version created by [Gabriel Luchina](https://github.com/luchina-gabriel/BASE-EFI-INTEL-DESKTOP-9THGEN-COFFEE-LAKE-REFRESH) with some adjustments to work on MSI Z390-A Pro
+This EFI is based on the core version provided from [Dortania's guide](https://dortania.github.io/) with some adjustments to work on MSI Z390-A Pro. You can't use this EFI without generating your own data with GenSMBIOS. Current supported version: 0.7.5
 
 ## Requirements to edit the EFI
 
