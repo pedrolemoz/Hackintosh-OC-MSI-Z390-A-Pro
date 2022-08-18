@@ -5,7 +5,19 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/macOS_Monterey_Z390-A_Pro.png"/>
 
-This EFI is based on the core version provided from [Dortania's guide](https://dortania.github.io/) with some adjustments to work on MSI Z390-A Pro. You can't use this EFI without generating your own data with GenSMBIOS. Current supported version: 0.7.5
+This EFI is based on the core version provided from [Dortania's guide](https://dortania.github.io/) with some adjustments to work on MSI Z390-A Pro. You can't use this EFI without generating your own data with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). Seriously, it WILL NOT BOOT. Current OpenCore supported version: 0.8.3
+
+## Hardware used to create this EFI
+
+|Component|Hardware|
+|-|-|
+|Motherboard|MSI Z390-A Pro|
+|CPU|Intel Core i5-9600K|
+|dGPU|RTX 3060 OC 12 GB (EVGA)|
+|iGPU|Intel UHD 630|
+|RAM|16 GB DDR4 3200 MHz|
+
+> Any `dGPU` will be disabled with this EFI. Check the instructions below if you have a supported one. 
 
 ## Requirements to edit the EFI
 
@@ -13,22 +25,14 @@ This EFI is based on the core version provided from [Dortania's guide](https://d
 - [ProperTree](https://github.com/corpnewt/ProperTree)
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
-## BIOS configuration
+In GenSMBIOS, use `iMac19,1` as parameter to generate info.
+In ProperTree, go to `PlatformInfo` -> `Generic` and place the corresponding data in their respective fields:
 
-Press F7 to enter the advanced mode (or click in the button at top)
-
-Restore the default configuration (Settings -> Save & Exit -> Restore Defaults)
-
-Find and change accordingly:
-
-|Configuration|Value|
+|GenSMBIOS generated info|config.plist|
 |-|-|
-|Serial(COM) Port0|Disabled|
-|Parallel(LPT) Port|Disabled|
-|Above 4G MMIO BIOS assignment|Enabled|
-|Initiate Graphic Adapter|IGD|
-|Windows 10 WHQL Support|UEFI|
-|Secure Boot|Disabled|
-|Boot mode select|UEFI|
-|Above 4G memory/Crypto Currency mining|Enabled|
-|CFG Lock|Disabled|
+|Type|SystemProductName|
+|Serial|SystemSerialNumber|
+|Board Serial|MLB|
+|SmUUID|SystemUUID|
+
+As mentioned early, any `dGPU` will be disabled. To enable a supported `dGPU`, go to `NVRAM` -> `Add` -> `7C436110-AB2A-4BBB-A880-FE41995C9F82` -> `boot-args` and remove the `-wegnoegpu` flag.
