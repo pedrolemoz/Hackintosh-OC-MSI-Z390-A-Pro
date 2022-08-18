@@ -36,3 +36,40 @@ In ProperTree, go to `PlatformInfo` -> `Generic` and place the corresponding dat
 |SmUUID|SystemUUID|
 
 As mentioned early, any `dGPU` will be disabled. To enable a supported `dGPU`, go to `NVRAM` -> `Add` -> `7C436110-AB2A-4BBB-A880-FE41995C9F82` -> `boot-args` and remove the `-wegnoegpu` flag.
+
+## BIOS Configuration
+
+In order to boot this EFI, you'll need to configure the motherboard BIOS.
+I've made a custom configuration file, and you can download it by [clicking here](https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/bios_config.ocb).
+
+### How to install this configuration file
+
+First of all, make sure to be in BIOS version `E7B98IMS.1E1`.
+If you aren't in this version, please update your system.
+You can find newer versions in [MSI website](https://www.msi.com/Motherboard/Z390-A-PRO/support).
+Futhermore, backup your current config to avoid mistakes.
+
+First, click in the advanced button, at the top
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/1.bmp"/>
+
+Go to the `OC Profile` section, at the right
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/2.bmp"/>
+
+Select the `OC Profile Load from USB` option
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/3.bmp"/>
+
+Select the downloaded file in your USB device and press enter
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/4.bmp"/>
+
+If everything is done successfully, you'll see this screen:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pedrolemoz/Hackintosh-OC-MSI-Z390-A-Pro/master/Assets/5.bmp"/>
